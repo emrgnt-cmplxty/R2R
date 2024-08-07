@@ -59,7 +59,6 @@ class SciPhiCompletionProvider(LiteCompletionProvider):
             os.environ["OPENAI_API_KEY"] = original_key
 
     def _execute_task_sync(self, task: dict[str, Any]):
-        print('task = ', task)
         generation_config = task["generation_config"]
         self._validate_model(generation_config)
         original_key = self._set_api_key(os.getenv("SCIPHI_PRIVATE_API_KEY"))
